@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> a </title>
+        
+ </head>
+    
+    <body>
+        <script>
+            function witaj(imie){
+                document.write("Witaj " + imie + "<br>");
+            }
+            
+            function polekwadratu(bok){
+                var pole = bok * bok;
+                return pole;
+            
+            }
+            
+            var x = "user";
+            
+            witaj(x);
+            
+            
+            function trojkat(a,h) {
+                
+                var a1, h1;
+                
+                
+                
+                document.write(1/2*a*h);
+                
+            }
+            
+            //trojkat(4,6);
+            
+            
+            function prostopadloscian(a,b,h) {
+                
+                var a = document.getElementById("a").value;
+                var b = document.getElementById("b").value;
+                var c = document.getElementById("c").value;              
+                
+                
+                document.getElementById("demo").innerHTML =a*b*c;
+                
+            }
+            
+           // prostopadloscian(2,2,2);
+            function prostopadloscian2(a,b,c) { //pole powierzchni
+                var a = document.getElementById("a").value;
+                var b = document.getElementById("b").value;
+                var c = document.getElementById("c").value;
+                
+                
+                
+               document.getElementById("demo").innerHTML =4*a*c + 2*a*b + "cm<sup>2<sup>";
+                
+            }
+            
+            //prostopadloscian2();
+        
+        function kula(r){
+            var r = document.getElementById("r").value;
+            var x = Math.PI;
+            var z = 4*x*r*r
+            
+            document.getElementById("demo").innerHTML = Math.round(z*100) / 100;
+        }
+            
+            function kula2(r){
+            var r = document.getElementById("r").value;
+            var x = Math.PI;
+            var z = r*r*r* 4/3 * x;
+            
+            document.getElementById("demo").innerHTML = Math.round(z*100) / 100;
+        }
+            
+        
+        
+        </script>
+     		<input type="text" id="a" value="bok1 (a)">
+            <input type="text" id="b" value="bok2 (b)">
+            <input type="text" id="c" value="bok3 (c)">
+    
+    
+        
+        <input type="text" id="r" value="promień (r)"> <br><br>
+        <button onclick="kula()">oblicz pole kuli</button>
+        <button onclick="kula2()">oblicz objetosc kuli</button><br><br>
+        <button onclick="prostopadloscian()">oblicz pole powierzchni prostopadloscianu</button>
+        <button onclick="prostopadloscian2()">oblicz pobjetosc prostopadloscianu</button>
+        
+    
+    
+    <p id="demo"></p>
+    
+    
+    </body>
+
+   
+</html>

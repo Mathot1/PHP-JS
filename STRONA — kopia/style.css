@@ -1,0 +1,65 @@
+#a1 {
+  background-color: grey;
+
+
+}
+h1 {
+  text-align: center;
+
+
+
+
+}
+#b2 {
+width:80%;
+height: 800px;
+background-color: lightblue;
+margin-top: 50px;
+margin-left: auto;
+margin-right: auto;
+
+
+
+
+
+}
+
+#b4 {
+width: 60%;
+margin-left: auto;
+margin-right: auto;
+
+
+
+
+}
+#b3 {
+  text-align: center;
+  display: block;
+  float:right;
+
+
+
+}
+.b1 {
+    overflow: hidden;
+    background-color: yellow;
+}
+
+.b1 a {
+    float: right;
+    color: aqua;
+    text-align: center;
+    padding: 20px 22px;
+   text-decoration: none;
+}
+.b1 a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#af {
+float:left;
+
+
+}

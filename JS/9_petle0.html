@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> TYTUŁ </title>
+        
+ </head>
+    
+    <body style="background-color: grey;">
+                    <form>
+        
+<!--                    Podaj liczbe 1 <input type="number" id="nr1"><br><br>-->
+<!--                    Podaj liczbe 2 <input type="number" id="nr2"><br><br>-->
+                        
+        
+        </form>
+        <button id="PRZYCISK">start</button><br>
+        
+    <p id="dab"></p>
+    <script>
+        
+      document.getElementById("PRZYCISK").onclick =  function funkcja (){
+          
+          var x = "";
+          var y = "test";
+          var z = 0;
+          var p = 0;
+          
+            do{
+                
+                
+                x = prompt('podaj haslo');
+                z = z+1;
+                if (x == y){
+                    p = 3;
+                    z = 3;
+                    alert("odgadles haslo");
+                    
+                    
+                    
+                }
+                
+                
+            }while (z!=3)
+            if (z = 3 && p !=3){
+                
+                
+                alert("nie odgadles hasla");
+                
+                }
+            
+        }
+        
+        
+    
+        
+        
+        
+        
+        
+        </script>
+    </body>
+    
+
+   
+</html>

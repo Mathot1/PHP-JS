@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> Titel formularze </title>
+        
+ </head>
+    
+    <body id="bady" style="background-color:grey;">
+<form>
+        
+        
+        
+        
+        </form> 
+
+     <script>
+  
+         var t;
+         
+         
+        function funkcja() {
+        var now = new Date();
+        var dzien = now.getDate();
+        var miesiac = now.getMonth() + 1;
+        var godzina = now.getHours();
+        var minuta = now.getMinutes();
+        var sekunda = now.getSeconds();
+        var milisekunda = now.getMilliseconds();
+        if (sekunda <10){
+            
+            sekunda = "0"+sekunda;
+            
+            
+        }
+            if (minuta < 10){
+            
+            minuta = "0"+ minuta;
+            
+            
+        }
+            if (godzina < 10){
+            
+            godzina = "0"+ godzina;
+            
+            
+        }
+        document.getElementById("daab").innerHTML = godzina + " : " + minuta +" : " + sekunda + " : "+ milisekunda;
+         
+        
+        t = setTimeout(function(){ funkcja() }, 1);
+        }
+        
+        window.addEventListener("load",funkcja)
+        </script>   
+<div id="daab"></div>
+    </body>
+    
+    
+    
+</html>

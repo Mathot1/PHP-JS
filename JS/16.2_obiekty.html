@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> Titel Obiekty </title>
+                                                    
+ </head>
+    
+    <body id="bady" style="background-color:grey;">
+<form>       
+        
+        </form> 
+
+     <script>
+        var jan = {
+        imie: "Jan",
+        nazwisko:"Kowal",
+        waga:80,
+        wiek:25,
+        plec:"M",
+        wyswietl: function(){document.write("twoje imię: " + this.imie +", twoje nazwisko: " + this.nazwisko + ", twój wiek: " + this.wiek + ", płeć: " + this.plec  + ", twoja waga: " + this.waga+ "<br>");}
+        };
+        var agata = {
+        imie: "Agata",
+        wiek:13,
+        plec:"K",
+        waga:999,
+        nazwisko:"Potężna",
+        wyswietl: function(){document.write("twoje imię: " + this.imie +", twoje nazwisko: " + this.nazwisko + ", twój wiek: " + this.wiek + ", płeć: " + this.plec  + ", twoja waga: " + this.waga + "<br>");}
+        };
+        
+        jan.wyswietl();
+        agata.wyswietl();
+        
+         
+        var x = agata.wiek; 
+        var y = agata.waga;
+        var z = jan.wiek;
+        var f = jan.waga;
+        
+        x = parseInt(x);
+        y = parseInt(y);
+        z = parseInt(z);
+        f = parseInt(f);
+         
+        var sumaw = x + z;
+        var sumaw2 = y + f;
+        
+         
+         
+        //document.write(fiat.model);
+        document.write("Sredni wiek: "+ sumaw/2 + ", Srednia waga: " + sumaw2/2  )
+         if(agata.waga > 80){
+             
+             document.write("<br>Agata jest gruba")
+             
+             
+         }
+        </script>  
+<div id="daab"></div>
+    </body>
+    
+    
+    
+</html>

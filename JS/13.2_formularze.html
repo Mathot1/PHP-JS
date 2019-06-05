@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> Titel formularze </title>
+        
+ </head>
+    
+    <body id="bady" style="background-color:grey;">
+    
+     <form method="post" action="dane.php">
+        
+         <div id="err53"></div>
+        
+        <input type="color" name="color" id="kolor" ><br><br>
+        <input type="text" id="imie" name="nazwisko" placeholder="imie"><br><br>
+        <input type="text" id="nazwisko" name="nazwisko" placeholder="nazwisko"><br><br>
+        <input type="submit" id="przycisk" name="przycisk" value="wyslij"><br><br>
+        
+        
+        
+        
+        
+        
+        
+        </form> 
+        <script>
+        var x = document.getElementById("imie");
+        var y = document.getElementById("nazwisko");
+           
+            
+            function funkcjaS() {
+            
+            if(this.value.length <=2) {
+                
+                
+                document.getElementById("err53").innerHTML = "<b style='color:red;'>Błędne dane</b>"                
+            }
+                else {
+                    
+                    document.getElementById("err53").innerHTML = ""
+                    
+                }
+            
+            
+            
+            
+            
+            
+        }
+        
+         function funkcjaK() {
+        var z = document.getElementById("kolor").value; 
+            
+            
+            console.log(z)
+            
+            document.getElementById("bady").style.background = z;
+}
+            
+        function witaj(){
+            
+            alert("witaj na stronie");
+            
+            
+            
+        }   
+            
+            
+            
+            
+            
+            
+        x.addEventListener('blur', funkcjaS);
+        y.addEventListener('blur', funkcjaS);
+        document.getElementById("kolor").addEventListener('change', funkcjaK);
+        window.addEventListener('load', witaj)
+        
+        
+        
+        
+        
+        
+        </script>
+
+        
+<style>
+        
+    #zdjecie {
+        
+        width: 1000px;
+        height: 70px;
+        
+        
+    }
+        
+        
+        
+        </style>
+        
+    <script>
+        
+		
+		
+        </script>
+
+    </body>
+    
+    
+    
+</html>

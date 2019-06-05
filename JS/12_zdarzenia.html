@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> lssffssf </title>
+        
+ </head>
+    
+    <body style="background-color: grey;">
+<fieldset>
+        <form>
+        <div id="ERR" style="color:red;"></div><br>
+        <p id="PASSED" style="color:green;"></p>
+        <legend>Rejestracja</legend>
+            
+        <input type="text" id="imie" placeholder="Imię" autofocus><br><br>
+        <input type="text" id="imie2" placeholder="Nazwisko"><br><br>
+        <input type="text" id="login" placeholder="Login"><br><br>
+        <input type="password" id="haslo" placeholder="Hasło"><div>Siła hasła:<div id="sila"></div><progress id="pasek" value="0" max="99">
+</progress></div><br>
+        <input type="password" id="haslo2" placeholder="Powtórz hasło"><br><br>
+        <input type="email" id="kod" placeholder="E-mail"><br><br>
+        <input type="email" id="kod2" placeholder="Powtórz e-mail"><br><br>
+        <input type="date" id="data"> Data urodzenia<br><br>
+        <input type="checkbox" id="regulamin">Akceptuje regulamin<br><br>
+            
+            
+        
+        </form>
+        
+        </fieldset>
+        <style>
+        
+        
+        
+        
+        </style>
+
+    <script>
+	//jeszcze nie obiektowo, stary projekt
+        function funkcja() {
+		var text = document.getElementById("imie").value;
+            var text2 = document.getElementById("imie2").value;
+            var text3 = document.getElementById("login").value;
+            
+            var text4 = document.getElementById("haslo").value;
+            var text5 = document.getElementById("haslo2").value;
+            
+            var text6 = document.getElementById("kod").value;
+            var text7 = document.getElementById("kod2").value;
+            
+            var text8 = document.getElementById("data").value;
+            //var text9 = document.getElementById("regulamin").value;
+            
+            var regula =  /([a-z]|[A-Z]|[ąężźćśńół]){1,40}/;   //IMIE NAZWISKO
+            var regula2 =  /([a-z]|[A-Z]|[ąężźćśńół]|[0-9]){1,40}/; //login
+            var regula3 = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,35})$/ ;   //HASLO PRZYNAJMNIEJ 1 MALA 1 DUZA 1 CYFRA
+            var regula5 = /^[a-z]{1}[\w|\.|\-]{0,30}@(\w{1,20}\.){1,3}[a-z]{1,3}$/i;    //email
+            
+            
+            
+            
+            var sprawdz = regula.test(text);  //sprawdz imie
+            var sprawdz2 = regula.test(text2); //sprawdz nazwisko
+            var sprawdz3 = regula3.test(text4); //sprawdz haslo
+            var sprawdz4 = regula5.test(text6);  //sprawdz email
+            var sprawdz5 = regula2.test(text3);  //sprawdz login
+            
+            
+           // var sprawdzH = text4.test(text5);
+           // var sprawdzEM =  text6.test(text7);
+            document.getElementById("ERR").innerHTML = ""
+            document.getElementById("PASSED").innerHTML = ""
+		
+            if(text.length >40){                                     //imie zbyt duza liczba znakow
+                
+               document.getElementById("ERR").innerHTML +="Zbyt duza ilość znaków w polu Imię<br>"
+               document.getElementById("imie").focus();
+               
+               
+               
+               }
+            
+            else if(text.length <1){                                     //imie pole
+                
+               document.getElementById("ERR").innerHTML +="Uzupełnij polę Imię<br>"
+               document.getElementById("imie").focus();
+               
+               
+               
+               }
+        
+            else if (sprawdz == false) {                       //imie
+		
+            document.getElementById("ERR").innerHTML +="Błędne dane w polu Imię<br>";
+            document.getElementById("imie").focus();
+		
+		
+		}
+
+            if(text2.length >40){              //nazwisko zbyt dlugie
+               
+               document.getElementById("ERR").innerHTML +="Zbyt duża ilość znaków w polu Nazwisko<br>";
+               document.getElementById("imie2").focus();
+               
+               
+               
+               }
+            
+            
+            else if(text2.length <1){              //nazwisko dlugosc
+               
+               document.getElementById("ERR").innerHTML +="Uzupełnij pole Nazwisko<br>";
+               document.getElementById("imie2").focus();
+               
+               
+               
+               }
+		
+            else if (sprawdz2 == false){                 //nazwisko
+                
+                document.getElementById("ERR").innerHTML +="Błędne dane w polu Nazwisko<br>";
+                document.getElementById("imie2").focus();
+            }
+            
+            
+            if (text3.length >40){                 //zbyt dlugi login
+                
+                document.getElementById("ERR").innerHTML +="Zbyt długi Login<br>";
+                document.getElementById("login").focus();
+            }
+            
+            else if (sprawdz5 == false && text3.length >1){                 //login
+                
+                document.getElementById("ERR").innerHTML +="Błędny login<br>";
+                document.getElementById("login").focus();
+            }
+            else if (text3.length <1){  //login puste pole
+                
+                document.getElementById("ERR").innerHTML +="Uzupełnij pole Login<br>"                
+                document.getElementById("login").focus();
+                }
+            
+            if (text4.length <1) {         //pole haslo
+                
+                document.getElementById("ERR").innerHTML +="Uzupełnij pole Hasło<br>"
+                document.getElementById("haslo").focus();
+                
+                
+                }
+            else if (sprawdz3 == false){                 //haslo znaki 
+                
+                document.getElementById("ERR").innerHTML +="Hasło musi zawierać 1 małą litere, 1 dużą litere, 1 cyfre, nie może zawierać znaków specjalnych oraz musi mieć długość 8 do 35 znaków<br>";
+                document.getElementById("haslo").focus();
+            }
+            
+            else if(document.getElementById("haslo").value != document.getElementById("haslo2").value && sprawdz3 == true){ //roznica hasel
+               
+                document.getElementById("ERR").innerHTML += "Hasła różnią się od siebie<br>"
+               document.getElementById("haslo").focus();
+               
+               }
+            
+            
+            if (text6.length <1){               //e-mail pole
+                
+                document.getElementById("ERR").innerHTML +="Uzupełnij pole E-mail<br>"
+                document.getElementById("kod").focus();
+                
+                
+                }
+            
+            else if(document.getElementById("kod").value != document.getElementById("kod2").value && sprawdz4 == true){ //roznica email
+               
+               document.getElementById("ERR").innerHTML +="Adresy e-mail różnią się od siebie<br>";
+               document.getElementById("kod").focus();
+               
+            
+            }
+            
+            else if (sprawdz4 == false){                 //email 
+                
+                document.getElementById("ERR").innerHTML +="Błędny e-mail<br>";
+                document.getElementById("kod").focus();
+            }
+            
+            if (text8.length <1){      //data
+                
+                
+                document.getElementById("ERR").innerHTML +="Uzupełnij datę urodzin<br>";
+                
+                
+                }
+            
+            
+            if (document.getElementById("regulamin").checked == false){  //regulamin
+                
+                document.getElementById("ERR").innerHTML += "Zaakceptuj regulamin<br>";
+            
+            }
+                
+                
+                
+            
+            
+		 if (sprawdz == true && sprawdz2 == true && sprawdz3 == true && sprawdz4 == true && sprawdz5 == true && text8.length >1 &&document.getElementById("regulamin").checked == true && document.getElementById("haslo").value == document.getElementById("haslo2" && document.getElementById("kod").value == document.getElementById("kod2").value).value) {
+            
+            //document.getElementById("PASSED").innerHTML += "Rejestracja przebiegła pomyślnie";
+            document.write("<b style='color:green;'>Rejestracja przebiegła pomyślnie</b><br><br>");
+            document.write("Twoje dane:<br>");
+            document.write("Imię: " + text + "<br>");
+            document.write("Nazwisko: " + text2 + "<br>");
+            document.write("Adres e-mail: " + text6 + "<br>");
+            document.write("Login: " + text3 + "<br>");
+            document.write("Haslo: " + text4 + "<br>");
+            document.write("Data urodzenia: " + text8 + "<br>");
+            
+         
+         
+         
+         
+         }
+		
+		
+		console.log(sprawdz5);
+            console.log(sprawdz4);
+            console.log(sprawdz3);
+            console.log(sprawdz2);
+            console.log(sprawdz);
+            
+		
+                        }
+            
+            
+            function sila11 () {
+                var regula10 = /^((?=.*[a-z]).{3,35})$/ ;
+                var regula20 = /^((?=.*[A-Z]).{3,35})$/ ;
+                var regula30 = /^((?=.*\d).{3,35})$/ ;
+                var regula11 = /^((?=.*[a-z])(?=.*[A-Z]).{6,35})$/ ;
+                var regula12 = /^((?=.*\d)(?=.*[a-z]).{6,35})$/ ;
+                var regula13 = /^((?=.*\d)(?=.*[A-Z]).{6,35})$/ ;
+                
+                var text44 = document.getElementById("haslo").value;
+                
+                var regula33 = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,35})$/ ;
+                
+                var sprawdz10 = regula10.test(text44);
+                var sprawdz11 = regula11.test(text44);
+                var sprawdz12 = regula12.test(text44);
+                var sprawdz13 = regula13.test(text44);
+                var sprawdz20 = regula20.test(text44);
+                var sprawdz30 = regula30.test(text44);
+                var sprawdz33 = regula33.test(text44);
+                
+                
+                
+                
+                 if((sprawdz10 == true || sprawdz20 == true || sprawdz30 == true) &&  sprawdz11 == false && sprawdz12 == false && sprawdz13 == false && sprawdz33 == false)
+                   {
+                   
+                   //document.getElementById("sila").innerHTML = "<b style='color:red;'>Słaba</b>";
+                   document.getElementById("pasek").value = 33;
+                    
+                   
+                   
+                   
+                   }
+                else if((sprawdz13 == true || sprawdz12 == true || sprawdz11 == true) && sprawdz33 == false){
+                        
+                       // document.getElementById("sila").innerHTML = "<b style='color:yellow;'>Średnia</b>";
+                        document.getElementById("pasek").value = 66;
+                        
+                        
+                        }
+                else if(sprawdz33 == true){
+                    
+                     document.getElementById("pasek").value = 99;
+                   // document.getElementById("sila").innerHTML = "<b style='color:green;'>Silna</b>";
+                }
+                    
+                    
+                    else {
+                    
+                 //document.getElementById("sila").innerHTML ="";  
+                   document.getElementById("pasek").value = 0;  
+                }
+                    
+                    
+                    
+                }
+                
+                
+                
+            
+            
+            
+            
+            document.getElementById("haslo").addEventListener('keyup',sila11);
+		
+		
+		
+        </script>
+		
+		
+		<button onclick="funkcja()">Sprawdz i wyślij</button>
+        
+        
+        
+    </body>
+    
+
+   
+</html>

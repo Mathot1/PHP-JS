@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> f </title>
+        
+ </head>
+    
+    <body id="bady" style="background-color:grey;">
+    
+     <form method="post" action="dane.php">
+        
+         <div id="err53"></div>
+        
+        wpisz litere <input type="text" id="dab"><br><br>
+        
+        <div id="kod">Kod litery: </div><br><br>
+        Wybierz kolor kwadratu: <input type="color" name="color" id="kolor" ><br><br>
+        
+        
+        
+        
+        </form> 
+
+     <script>
+        
+    function funkcja() {
+        var x = document.getElementById("dab").value;  
+        let y = event.keyCode ;
+        
+        
+        switch(y){
+            case 32:
+                
+                y = 'spacja';
+                break;
+            case 16:
+               y = 'shift';
+                break;
+            case 17:
+                y = 'control';
+                break;
+            
+            case 18:
+                y = 'alt';
+                break;
+                
+            case 8:
+                y = 'backspace';
+                break;
+                
+            case 91:
+                y = 'OKNO';
+                break;
+                
+            case 9:
+                y = 'tab';
+                break;
+                
+            case 192:
+                y = 'tylda';
+                break;
+                
+            case 144:
+                y = 'num lock';
+                break;
+                
+            case 20:
+                y = 'caps lock';
+                break;
+            
+                
+                
+                
+            case 38:
+                y = '↑';
+                break;
+                
+            case 40:
+                y = '↓';
+                break;
+            case 39:
+                y = '→';
+                break;
+            case 37:
+                y = '←';
+                break;
+                
+                
+            case undefined:
+                y = "";
+                break;
+                
+                
+        }
+        document.getElementById("kod").innerHTML = "Kod litery: " + y ;  
+        
+        
+    console.log(event.keyCode);
+    
+    
+    
+    }
+
+
+    function showCursorPos(e) {
+    var b, x, y
+    if (!e) e = event
+    b = document.body
+    x = e.clientX + b.scrollLeft
+    y = e.clientY + b.scrollTop
+    document.getElementById('abc').innerHTML ="Pozycja kursora: " + "x = " + x + ' ' + "y = " + y;
+    
+        
+        
+        
+    }
+    var t;
+    var global = 0;
+    function funkcjag() {
+        
+      global = 1;   
+        
+        
+        
+        
+    }
+         
+         
+         
+
+    function agh(e) {
+    if (global ==1){
+        
+        global = 2;
+    }
+        
+    if(global == 2) {
+        
+    var b, x, y
+    if (!e) e = event
+    b = document.body
+    x = e.clientX + b.scrollLeft
+    y = e.clientY + b.scrollTop   
+    
+    document.getElementById("fff").style.height = y + "px";
+    document.getElementById("fff").style.width = x + "px";
+             
+    
+    
+    }
+    }
+    window.addEventListener('click',funkcja3);     
+         
+    function funkcja3(){ 
+    if(global == 2){
+    global = 2;
+    if(global == 2){
+      
+        global = 3;
+        }
+        
+    }     
+         
+    }
+         
+         
+function funkcjaK(){
+    
+    
+    var z = document.getElementById("kolor").value; 
+            
+            
+            console.log(z)
+            
+            document.getElementById("fff").style.background = z;
+    
+    
+}
+         
+         
+         
+         
+         
+ window.addEventListener('mousemove',showCursorPos);        
+        window.addEventListener('mousemove',agh);
+window.addEventListener('load',funkcja);
+document.getElementById("dab").addEventListener('keyup',funkcja);
+               
+ document.getElementById("kolor").addEventListener('change', funkcjaK);       
+        
+        
+        
+        
+        
+        
+        
+        </script>   
+<div id="abc">Pozycja kursora: </div>
+        <div id="fff" style="width:0px; height: 0px; background-color: red;"></div>
+        <div id="fffa" style="width:0px; height: 0px; background-color: red;"></div>
+<button id="aaaa" onclick="funkcjag()">Narysuj prostokąt</button>
+    </body>
+    
+    
+    
+</html>

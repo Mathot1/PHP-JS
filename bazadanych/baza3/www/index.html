@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>Szkoła ponadgimnazjalna</title>
+    <link rel="stylesheet" href="./styl.css">
+  </head>
+  <body>
+<div id="baner">
+<h1>Projekt strony internetowej szkoły ponadgimnazjalnej</h1>
+</div>
+
+
+
+<div id="L">
+<table>
+  <tr>
+    <th>Treść zapytania</th>
+    <th id="kolumna">Zrzut ekranu</th>
+  </tr>
+  <tr>
+    <td>INSERT INTO `klasa` (`id`, `nazwa`) VALUES ('5', '3a');</td>
+    <td id="kolumna"><img src="kwerenda1.jpg" alt="">
+    </td>
+  </tr>
+  <tr>
+    <td>SELECT klasa.nazwa, AVG(uczen.Srednia_ocen) FROM klasa INNER JOIN uczen ON klasa.id = uczen.id_klasy GROUP BY klasa.id;</td>
+    <td id="kolumna"> <img src="kwerenda2.jpg" alt="">
+    </td>
+  </tr>
+  <tr>
+    <td>CREATE USER 'Dyrektor'@'localhost' IDENTIFIED BY 'dyr_123';</td>
+    <td id="kolumna"> <img src="nowy_użytkownik.jpg" alt=""> </td>
+  </tr>
+  <tr>
+    <td>GRANT ALL PRIVILEGES ON szkola.* TO 'Dyrektor'@'localhost';</td>
+    <td id="kolumna"> <img src="uprawnienia.jpg" alt=""> </td>
+  </tr>
+</table>
+</div>
+
+
+
+<div id="R">
+ <h2>Do pobrania</h2>
+<table>
+ <ul>
+   <li><a href="../baza/szkola_nowa.sql">zapytania SQL</a></li>
+   <li><a href="../baza/kwerendy.txt">baza danych</a></li>
+   <hr>
+   <h3>Wyznaczanie najniższej średniej</h3>
+   <form method="post">
+     <table>
+       <ul>
+         <li>Polak <input type="text" id="x" value=""></li>
+         <li>Nowak <input type="text" id="y" value=""></li>
+         <li>Rysik <input type="text" id="z" value=""></li>
+         <input type="button" id="ff" value="wyznacz">
+         <h3>Najniższa średnia:</h3>
+       </ul>
+     </table>
+     <div id="ddd">
+
+     </div>
+   </form>
+
+ </ul>
+ </table>
+ <script>
+document.getElementById("ff").onclick = function funkcja() {
+   var a = document.getElementById('x').value;
+   var b = document.getElementById('y').value;
+   var c = document.getElementById('z').value;
+   if (isNaN(a) || isNaN(b) || isNaN(c) || a == "" || b == "" || c == "" ) {
+     document.getElementById('ddd').innerHTML= "wpisz propawne dane";
+   }
+   else {
+   a = parseFloat(a);
+   b = parseFloat(b);
+   c = parseFloat(c);
+
+  // var p = b + a + c;
+
+  if (a < b) {
+    if (a < c){
+      document.getElementById('ddd').innerHTML= a;
+    }
+    else {
+      document.getElementById('ddd').innerHTML= c;
+    }
+}
+  else if (b < a) {
+    if (b < c){
+      document.getElementById('ddd').innerHTML= b;
+    }
+    else {
+      document.getElementById('ddd').innerHTML= c;
+    }
+}
+  else {
+    if (a < c || b < c) {
+      document.getElementById('ddd').innerHTML= a;
+    }
+    else {
+      document.getElementById('ddd').innerHTML= c;
+    }
+}
+
+   //document.getElementById('ddd').innerHTML= p;
+
+}
+
+ }
+ </script>
+</div>
+
+
+
+<footer id="stopka">
+<h3>stronę wykonał: 11223344556</h3>
+</footer>
+
+  </body>
+</html>

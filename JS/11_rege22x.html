@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> s </title>
+        
+ </head>
+    
+    <body style="background-color: grey;">
+<form>
+        
+        Podaj kod pocztowy: <input type="text" id="a" autofocus><br><br>
+        
+        </form>
+
+
+    <p id="dab"></p>
+    <script>
+//ZADANIE DOMOWE 
+        //uzytkownik podaje w polu tekstowym kod pocztowy. Pod polem wyswietl komunikat czy dane zostaly prawidlowo wprowadzone (blur) jesli
+        //beda prawidlowe dane to wyswietl komunikat o tresci prawidlowy kod pocztowy: KOD POCZTOWY. Jesli bedzie bledny to wyswietl komunikat bledny kod pocztowy
+        
+        
+        //true / false
+        function funkcja() {
+		var text = document.getElementById("a").value;
+           var regula = /^\d{2}-\d{3}$/ ;
+        var sprawdz = regula.test(text);
+        
+		if (sprawdz == true) {
+		
+		document.getElementById("dd").innerHTML ="Twój kod pocztowy: " + text + " jest prawidłowy!";
+		
+		
+		
+		}
+		else if (sprawdz == false) {
+		
+		
+            document.getElementById("dd").innerHTML = "Twój kod pocztowy jest błędny!";
+            document.getElementById("a").value = "";
+            document.getElementById("a").focus();
+            
+            
+		}
+		
+		
+		
+		console.log(sprawdz);
+		
+		}
+		
+		
+		
+        </script>
+		<button onclick="funkcja()">Sprawdz kod pocztowy</button>
+        <style>
+        
+            li {
+                
+                
+                list-style-type: upper-roman;
+                
+                
+            }
+        
+        
+        
+        </style>
+        
+        <p id="dd"></p>
+    </body>
+    
+
+   
+</html>

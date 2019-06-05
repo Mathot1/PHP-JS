@@ -1,0 +1,2 @@
+zapytanie1: SELECT imie, telefon, szczepienie, opis FROM `zwierzeta`;
+zapytanie2: SELECT id, imie, wlasciciel FROM `zwierzeta` WHERE rodzaj = 2;

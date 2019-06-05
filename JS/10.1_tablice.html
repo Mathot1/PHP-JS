@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> Titel </title>
+        
+ </head>
+    
+    <body style="background-color: grey;">
+                    <form>
+        
+                    Podaj liczbe: <input type="text" id="nr1"><br><br>
+                        
+        
+        </form>
+        <button id="PRZYCISK">Dodaj</button><br>
+        <button id="info">info</button><br>
+    <p id="dab"></p>
+    <script>
+        var t = [];
+       document.getElementById("PRZYCISK").onclick = function funkcja() {
+            
+            
+            
+            
+            
+            t.push(document.getElementById('nr1').value);
+           console.log(t);
+        }
+        
+            
+             
+         document.getElementById("info").onclick = function funkcja2() { 
+             document.getElementById("dab").innerHTML = " "
+         var i = 0;  
+             var y = 0;
+             let suma = 0;
+             let suma2 = 0;
+             var z = 1;
+         while(i <t.length){
+             
+             document.getElementById("dab").innerHTML += t[i] + ' '+ '<br>';
+             i = i+1;
+             
+             
+         }
+             while(y <t.length){
+             t[y] = parseInt(t[y]);
+                 suma += t[y];    
+             y = y+1;
+             
+             
+         }
+             //y = y+1;
+             suma2 = parseInt(suma2);
+             suma2 = suma / y;
+             suma2 = Math.round(suma2*100) / 100;
+             
+             document.getElementById("dab").innerHTML +="<br>" + "suma: " + suma;
+             
+             document.getElementById("dab").innerHTML +="<br>" + "srednia: " + suma2;
+             
+         
+         
+         
+         
+         
+         }
+            
+        </script>
+    </body>
+    
+
+   
+</html>

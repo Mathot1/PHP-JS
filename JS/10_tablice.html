@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> w </title>
+        
+ </head>
+    
+    <body style="background-color: grey;">
+                    <form>
+        
+                    Podaj Kolor: <input type="text" id="nr1"><br><br>
+                        
+        
+        </form>
+        <button id="PRZYCISK">Dodaj</button><br>
+
+    <p id="dab"></p>
+    <script>
+  // konstruktor tablicy array  
+        var samochody = new Array(
+        
+                new Array('Jan','kowal','poznan'),
+                new Array('Anna','kowalwq','poznqwan'),
+                new Array('Pawel','kocas121212wal','poz2121nan')
+        
+        );
+        
+        
+        var kolory = ['czerwony','zielony','niebieski','czarny'];   
+          
+        
+        
+        var liczby = [2,1,20,10000,99,339];
+        
+        var sliczby = liczby.sort();
+        console.log(sliczby);
+        var s2liczby = liczby.sort(function(a,b){return(a-b);});
+        console.log(s2liczby);
+        //sortowanie rosnace
+            var sortownica = kolory.sort();
+            console.log(sortownica);
+        
+        //s malejace
+            var sortownica2 = sortownica.reverse();
+            console.log(sortownica2);
+        
+        //usuniecie ostatniego el z tablice
+            sortownica2.pop();
+            console.log(sortownica2);
+        
+        //dodanie    
+        
+            sortownica2.push('bialy');
+            console.log(sortownica2);
+        
+        
+        //sprawdzenie czy istnieje el w tablicy
+        
+            console.log(sortownica2.indexOf('zielony'))
+            console.log(sortownica2.indexOf('bialy'))
+        
+        
+        
+        
+        
+        
+        
+        document.getElementById("PRZYCISK").onclick = function funkcja (){
+            
+            if (document.getElementById('nr1').value == ''){
+               
+                
+                    alert("uzupelnij pole");
+                
+            }
+            else if (kolory.indexOf(document.getElementById('nr1').value)!= -1)  
+            
+                  alert("kolor istnieje");
+            
+            else {
+                  
+                kolory.push(document.getElementById('nr1').value);  
+                console.log(kolory);
+                console.log('ilosc kolorow: '+ kolory.length);
+                  
+              }  
+            }
+        
+        
+        </script>
+    </body>
+    
+
+   
+</html>

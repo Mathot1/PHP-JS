@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <title> r </title>
+        
+ </head>
+    
+    <body style="background-color:grey;">
+<style>
+        
+        
+    #red {
+        
+        
+        color:red;
+        
+    }
+
+        
+        
+        
+        </style>
+        
+        
+        
+        <form>
+        
+        <input type="text" id="bok" autofocus>X<br><br>
+        
+        </form>
+    
+    <button id="przycisk">wynik</button>
+       
+        <script>
+        
+        document.getElementById("przycisk").onclick = function(){
+            
+            var a = document.getElementById("bok").value;
+            var wynik = a*a;
+            var text = "Pole wynosi: ";
+            var text2 = '<span id="red">' + wynik + "cm<sup>2</sup>" + "</span>";
+            // var blok = document.getElementById("demo");         -        -             -              -          -      //skrocona wersja document.getelement
+            document.getElementById("demo").innerHTML= text + text2;
+            //document.getElementById("red").innerHTML=  wynik + "cm<sup>2</sup>";
+           // blok.innerHTML = a + " " + b;
+        }
+        
+        
+        
+        
+        </script>
+
+        <div id="demo"></div>
+    </body>
+
+   
+</html>
